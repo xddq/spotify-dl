@@ -1,7 +1,7 @@
 # spotify-dl
 Small shell script used to download your own spotify playlists. Uses the matching tracks on youtube and the youtube-dl tool.
 
-# prereqs
+### prereqs
 - [youtube-dl](https://github.com/ytdl-org/youtube-dl) installed.
 
 To install it right away for all UNIX users (Linux, macOS, etc.), type:
@@ -10,12 +10,12 @@ sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/you
 sudo chmod a+rx /usr/local/bin/youtube-dl
 ```
 
-# Info
+### Info
 - Has yet only been tested on ubuntu 18.04.5 LTS.
 - Should run on macOS and windows WSL if the command syntaxes are the same for: awk, grep, cat and youtube-dl.
 
 
-### Quick start
+# Quick start
 - Create an access token(the token from the example will NOT work, you need your own token) and find out your spotify playlist id.
 - Download this repo and go into the spotify-dl folder
 - Open the spotify-dl file with an editor. 
