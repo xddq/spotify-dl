@@ -21,6 +21,7 @@ sudo chmod a+rx /usr/local/bin/youtube-dl
 ```shell
 ./spotify-dl
 ```
+- The tracks are now stored under ./downloads
 
 
 ### Creating your own access token
