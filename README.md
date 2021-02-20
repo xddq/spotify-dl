@@ -10,6 +10,10 @@ sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/you
 sudo chmod a+rx /usr/local/bin/youtube-dl
 ```
 
+# Info
+- Has yet only been tested on ubuntu 18.04.5 LTS.
+- Should run on macOS and windows WSL if the command syntaxes are the same for: awk, grep, cat and youtube-dl.
+
 
 ### Quick start
 - Create an access token(the token from the example will NOT work, you need your own token) and find out your spotify playlist id.
