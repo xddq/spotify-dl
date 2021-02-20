@@ -49,5 +49,5 @@ Dont forget to press save.
 - Copy the link, everything after playlist is your playlistid.
 example:
 https://open.spotify.com/playlist/4oMRIwefQWsVxLRLqECDep
-playlistid=4oMRIwefQWsVxLRLqECDep
+Your playlist id would be 4oMRIwefQWsVxLRLqECDep
 This value will need to be copied into the script to replace the string after PLAYLIST_ID=
