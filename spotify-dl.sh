@@ -34,7 +34,7 @@ fi
 # Iterations will be lines /2 because we have name one line and album
 # one line. Increase counter by 2 per iteration rather than dividing by 2.
 TRACK_COUNT=$(cat spotify-playlist | wc -l)
-COUNTER=0
+COUNTER=1
 while [ $COUNTER -lt $TRACK_COUNT ]
 do
     # Uses '"name" : ' as delim to get the artist name.
