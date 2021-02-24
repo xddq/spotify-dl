@@ -1,2 +1,4 @@
 # ignores downloads folder
 downloads
+# ignore todos folder
+todos
