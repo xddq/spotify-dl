@@ -12,7 +12,7 @@
 # id of your created api token
 API_TOKEN=BQCh0up_Juq8RaTeMlz1J0lebW2J_3sk9tYtDlWU7VF4t5C0KcDPMiV2PoMEMrEkwMJJXRtx0BGhEdvCJuDkUQCEdSfRlwVTdXKYPWB2QSLoIgHVVKpmaukTWbAKcsWtujVdxWP2ZQ
 # id of the playlist you want to download
-PLAYLIST_ID=2Qt6vSalV7iAwsIlmtM14L
+PLAYLIST_ID=16ijVuTFj5lyKoMvO7mKOF
 # If you set this to TRUE you will end up with .mp3 files. If you set this to
 # any other value you will end up with .opus files.
 STORE_AS_MP3=hellno
@@ -100,7 +100,7 @@ rm get-playlist-tracks get-playlist-name
 # renames all files in our playlist directory. results will be in
 # kebab-case.fileFormat. src for one liner:
 # https://superuser.com/questions/659876/how-to-rename-files-and-replace-characters
-cd ./downloads/$PLAYLIST_NAME
+cd "./downloads/$PLAYLIST_NAME"
 for f in *; do mv -v "$f" \
    $(echo "$f" | tr [A-Z] [a-z] | tr [:blank:] [\\-] | sed s/\-\-*/-/g ); done
 
