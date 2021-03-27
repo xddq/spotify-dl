@@ -10,12 +10,12 @@
 
 # CHANGE THESE TWO VALUES
 # id of your created api token
-API_TOKEN=BQBsP6Ok3CZcRKBPIgcdUnK6pETmCA-6Y718v1otNh3ERCyDGKYNZNZrUVDdNrHCQ8d5kapRCvSxG7q8byFxijY53gDeUSi4tfsCIbzJpKm9mP_w8sJvWjEmzRThMTaK23SRORBaNw
+API_TOKEN=BQCh0up_Juq8RaTeMlz1J0lebW2J_3sk9tYtDlWU7VF4t5C0KcDPMiV2PoMEMrEkwMJJXRtx0BGhEdvCJuDkUQCEdSfRlwVTdXKYPWB2QSLoIgHVVKpmaukTWbAKcsWtujVdxWP2ZQ
 # id of the playlist you want to download
 PLAYLIST_ID=2Qt6vSalV7iAwsIlmtM14L
 # If you set this to TRUE you will end up with .mp3 files. If you set this to
 # any other value you will end up with .opus files.
-STORE_AS_MP3=TRUE
+STORE_AS_MP3=hellno
 
 
 # sets argument for youtube-dl by given value of $STORE_AS_MP3
@@ -35,9 +35,11 @@ curl -X "GET" "https://api.spotify.com/v1/playlists/$PLAYLIST_ID/tracks?fields=i
 
 # checks if api token is invalid or playlist does not exist by counting the
 # lines of the file we get by calling the api.
-if [ -z $(cat get-playlist-tracks | wc -l) ]
+if [ $(cat get-playlist-tracks | wc -l) -eq 0 ]
 then
-    echo "Either the api token is wrong or the playlist does not exist."
+    echo "Error. Either wrong API token or the playlist does not exist. The
+    API token expires after 60 minutes. You might need to refresh it and
+    insert a new one."
     exit 1
 fi
 
@@ -94,6 +96,14 @@ done
 
 # cleans up the temporary file
 rm get-playlist-tracks get-playlist-name
+
+# renames all files in our playlist directory. results will be in
+# kebab-case.fileFormat. src for one liner:
+# https://superuser.com/questions/659876/how-to-rename-files-and-replace-characters
+cd ./downloads/$PLAYLIST_NAME
+for f in *; do mv -v "$f" \
+   $(echo "$f" | tr [A-Z] [a-z] | tr [:blank:] [\\-] | sed s/\-\-*/-/g ); done
+
 
 # notifies user that we are done
 echo "Done downloading your playlist. Check results in the
