@@ -20,11 +20,13 @@ Uses the matching tracks on youtube and the youtube-dl tool.
 4. Open the spotify-dl.sh file with an editor.
 5. Replace everything after "API_TOKEN=" with your token.
 6. Replace everything after "PLAYLIST_ID=" with your playlist id.
-7. Run the shell script
+7. Set value after "STORE_AS_MP3=" to TRUE if you want to have the tracks
+   stored as .mp3 files. Otherwise they will be stored as .opus.
+8. Run the shell script
 ```shell script
 ./spotify-dl
 ```
-8. The tracks are now stored under ./downloads.
+9. The tracks are now stored under ./downloads/nameOfYourPlaylist/.
 
 ## creating your access token
 1. Visit the [spotify developer dashboard](https://developer.spotify.com/dashboard/) and log into your account.
@@ -41,6 +43,8 @@ https://accounts.spotify.com/en/authorize?client_id=insertYourClientIdHere&respo
 6. Open the link with your browser, read through the popup and agree if you do.
 7. You will be redirected to your given redirectUri.
 8. Everything after "access_token=" until the next "&" will be your token.
+Note: The tokens only last for one hour. So if you want to download stuff
+another day just generate a new token.
 
 ### example
 - ClientId: fa449q4129a543b6a6bbe8ccjk106b16
